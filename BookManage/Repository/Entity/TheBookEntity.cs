@@ -14,7 +14,7 @@ namespace BookManage.Repository.Entity
 
         public string CategoryIds { get; set; }
 
-        public string ColorId { get; set; }
+        public int ColorId { get; set; }
 
         public int DataStatus { get; set; }
 

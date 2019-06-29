@@ -2,7 +2,7 @@ CREATE TABLE `the_book` (
     `id` int NOT NULL AUTO_INCREMENT COMMENT 'Id',
     `title` varchar(100) NULL COMMENT 'Title',
     `category_ids` varchar(100) NULL COMMENT 'CategoryIds',
-    `color_id` varchar(100) NULL COMMENT 'ColorId',
+    `color_id` int NOT NULL DEFAULT 0 COMMENT 'ColorId',
     `data_status` int NOT NULL DEFAULT 0 COMMENT 'DataStatus',
     `create_time` datetime NOT NULL COMMENT 'CreateTime',
     `last_update_time` datetime NOT NULL COMMENT 'LastUpdateTime',
