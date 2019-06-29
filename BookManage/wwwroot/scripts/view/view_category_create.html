@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h4 class="modal-title">新增</h4>
+</div>
+<div class="modal-body">
+    <form class="form form-horizontal" name="theForm" novalidate>
+        <div class="form-group" ng-class="{'has-error':theForm.name.$dirty&&theForm.name.$error.required}">
+            <label class="col-sm-2 control-label">名称</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="name" ng-model="item.name" required />
+                <p class="text-danger" ng-show="theForm.name.$dirty && theForm.name.$error.required">必填</p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error':theForm.description.$dirty&&theForm.description.$error.required}">
+            <label class="col-sm-2 control-label">描述</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="description" ng-model="item.description" required />
+                <p class="text-danger" ng-show="theForm.description.$dirty && theForm.description.$error.required">必填</p>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button ng-click="confirmCreate()" ng-disabled="theForm.$invalid" class="btn btn-primary">确认添加</button>
+</div>
