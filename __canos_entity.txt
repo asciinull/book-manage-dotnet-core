@@ -232,7 +232,7 @@
       "Name": "ColorId",
       "DisplayName": "封面颜色",
       "PropertyFrom": "Meta",
-      "ProgramType": "STRING",
+      "ProgramType": "INT",
       "MetadataName": "MetaColor",
       "IsMultiMetadata": false,
       "FieldName": null,
