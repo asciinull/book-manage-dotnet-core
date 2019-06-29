@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <h4 class="modal-title">新增</h4>
+</div>
+<div class="modal-body">
+    <form class="form form-horizontal" name="theForm" novalidate>
+        <div class="form-group" ng-class="{'has-error':theForm.title.$dirty&&theForm.title.$error.required}">
+            <label class="col-sm-2 control-label">标题</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="title" ng-model="item.title" required />
+                <p class="text-danger" ng-show="theForm.title.$dirty && theForm.title.$error.required">必填</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">图书分类</label>
+            <div class="col-sm-10">
+                <div class="icheck-primary icheck-inline" ng-repeat="x in categoryIds_selection">
+                    <input type="checkbox" id="categoryIds_{{x.name}}" name="category_ids" ng-model="x.selected" />
+                    <label for="categoryIds_{{x.name}}">{{x.name}}({{x.description}})</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">封面颜色</label>
+            <div class="col-sm-10">
+                <div class="icheck-primary icheck-inline" ng-repeat="x in colorId_selection">
+                    <input type="radio" id="colorId_{{x.colorId}}" name="colorId" ng-value="x.colorId" ng-model="$parent.item.colorId" />
+                    <label for="colorId_{{x.colorId}}">{{x.colorId}}({{x.colorName}})</label>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button ng-click="confirmCreate()" ng-disabled="theForm.$invalid" class="btn btn-primary">确认添加</button>
+</div>
